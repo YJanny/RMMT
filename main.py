@@ -6,36 +6,23 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Say hello')
 
     # ####### Only uncomment one group below ############
-    # # Group 1: Train the teacher and extract the visual knowledge
+    # # Group 1: Train the video
     # parser.add_argument('-modality', default=["video", "continuous_label"], nargs="*", help='video, eeg_bandpower, landmark')
     # parser.add_argument('-extract_feature', default=1, type=int, help='Extract dark knowledge from the teacher?')
-    # parser.add_argument('-use_kd_on_student', default=0, type=int, help='Extract dark knowledge from the teacher?')
+    # parser.add_argument('-use_kd', default=0, type=int, help='Extract dark knowledge from the teacher?')
     # parser.add_argument('-w', default=0, type=float, help='The weight of the L1 loss for the knowledge distillation.')
 
-    # # Group 2: Train the standalone student without the supervision of the teacher
+    # # Group 2: Train the EEG
     # parser.add_argument('-modality', default=["eeg_bandpower", "continuous_label"], nargs="*", help='video, eeg_bandpower, landmark')
     # parser.add_argument('-extract_feature', default=0, type=int, help='Extract dark knowledge from the teacher?')
-    # parser.add_argument('-use_kd_on_student', default=0, type=int, help='Extract dark knowledge from the teacher?')
+    # parser.add_argument('-use_kd', default=0, type=int, help='Extract dark knowledge from the teacher?')
     # parser.add_argument('-w', default=0, type=float, help='The weight of the L1 loss for the knowledge distillation.')
     #
-    # Group 3: Train the student with the supervision of the teacher
+    # Group 3: Train the fusion
     parser.add_argument('-modality', default=["eeg_bandpower", "video", "continuous_label"], nargs="*", help='video, eeg_bandpower, landmark')
     parser.add_argument('-extract_feature', default=0, type=int, help='Extract dark knowledge from the teacher?')
-    parser.add_argument('-use_kd_on_student', default=0, type=int, help='Extract dark knowledge from the teacher?')
+    parser.add_argument('-use_kd', default=0, type=int, help='Extract dark knowledge from the teacher?')
     parser.add_argument('-w', default=1, type=float, help='The weight of the L1 loss for the knowledge distillation.')
-
-    # # Group 4: Train the teacher and extract the visual knowledge
-    # parser.add_argument('-modality', default=["video", "discrete_label"], nargs="*", help='video, eeg_bandpower, landmark')
-    # parser.add_argument('-extract_feature', default=0, type=int, help='Extract dark knowledge from the teacher?')
-    # parser.add_argument('-use_kd_on_student', default=0, type=int, help='Extract dark knowledge from the teacher?')
-    # parser.add_argument('-w', default=0, type=float, help='The weight of the L1 loss for the knowledge distillation.')
-
-    # # # Group 5: Train the standalone student without the supervision of the teacher
-    # parser.add_argument('-modality', default=["eeg_bandpower", "discrete_label"], nargs="*", help='video, eeg_bandpower, landmark')
-    # parser.add_argument('-extract_feature', default=0, type=int, help='Extract dark knowledge from the teacher?')
-    # parser.add_argument('-use_kd_on_student', default=0, type=int, help='Extract dark knowledge from the teacher?')
-    # parser.add_argument('-w', default=0, type=float, help='The weight of the L1 loss for the knowledge distillation.')
-
 
 
     ####### Only uncomment one group above ############
